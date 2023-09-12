@@ -19,19 +19,19 @@ namespace csharp_calcolatrice
                 switch (operation)
                 {
                     case "+":
-                        return (firstNumber + secondNumber.Value);
+                        return sum(firstNumber, secondNumber.Value);
                     case "-":
-                        return firstNumber - secondNumber.Value;
+                        return subtract(firstNumber, secondNumber.Value);
                     case "*":
-                        return firstNumber * secondNumber.Value;
+                        return multiply(firstNumber, secondNumber.Value);
                     case "/":
-                        return firstNumber / secondNumber.Value;
+                        return divide(firstNumber, secondNumber.Value);
                     case "%":
-                        return firstNumber % secondNumber.Value;
+                        return modulo(firstNumber, secondNumber.Value);
                     case "min":
-                        return Math.Min(firstNumber, secondNumber.Value);
+                        return min(firstNumber, secondNumber.Value);
                     case "max":
-                        return Math.Max(firstNumber, secondNumber.Value);
+                        return max(firstNumber, secondNumber.Value);
                     case "pow":
                         return (double)Math.Pow(firstNumber, secondNumber.Value);
                     default:
@@ -41,12 +41,85 @@ namespace csharp_calcolatrice
             else
             {
                 // if user insert one number and abs as operation
-                return Math.Abs(firstNumber);
+                return abs(firstNumber);
             }
         }
 
-        // Helper function
-        public static double GetIntNumber(string numberDescription)
+
+        // Sum
+        static double sum(double num1, double num2)
+        {
+            return num1 + num2;
+        }
+
+        // Subtract
+        static double subtract(double num1, double num2)
+        {
+            return num1 - num2;
+        }
+
+        // Multiply
+        static double multiply(double num1, double num2)
+        {
+            return num1 * num2;
+        }
+
+        // Divide
+        static double divide(double num1, double num2)
+        {
+            return num1 / num2;
+        }
+
+        // Modulo
+        static double modulo(double num1, double num2)
+        {
+            return num1 % num2;
+        }
+
+        // Min
+        static double min(double num1, double num2)
+        {
+            if (num1 < num2)
+            {
+                return num1;
+            }
+
+            return num2;
+        }
+
+        // Max
+        static double max(double num1, double num2)
+        {
+            if (num1 < num2)
+            {
+                return num2;
+            }
+
+            return num1;
+        }
+
+        // ABS
+        static double abs(double num)
+        {
+              if (num < 0 )
+            {
+                return num + -(num * 2);
+            }
+
+            return num;
+        }
+
+        // pow
+        static double pow(double num1, double num2)
+        {
+            // to implement
+
+            return num1;
+        }
+
+
+            // Helper function
+            public static double GetIntNumber(string numberDescription)
         {
             bool isNumber = false;
             double number = 0;
