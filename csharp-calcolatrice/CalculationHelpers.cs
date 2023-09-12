@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace csharp_calcolatrice
 {
-    internal sealed class CalculationHelpers<T>
+    internal sealed class CalculationHelpers
     {
         public static double makeCalculation(double firstNumber, double? secondNumber, string operation)
         {
@@ -41,87 +41,68 @@ namespace csharp_calcolatrice
             else
             {
                 // if user insert one number and abs as operation
-                return abs(firstNumber);
+                return Abs(firstNumber);
             }
         }
 
 
         // Sum
-        static T Sum<T>(T num1, T num2)
+        static double Sum(double num1, double num2)
         {
-            dynamic first = num1;
-            dynamic second = num2;
-
-            return first + second;
+            return num1 + num2;
         }
 
         // Subtract
-        static T Subtract<T>(T num1, T num2)
+        static double Subtract(double num1, double num2)
         {
-            dynamic first = num1;
-            dynamic second = num2;
-
-            return first - second;
+            return num1 - num2;
         }
 
         // Multiply
-        static T Multiply<T>(T num1, T num2)
+        static double Multiply(double num1, double num2)
         {
-            dynamic first = num1;
-            dynamic second = num2;
-
-            return first * second;
+            return num1 * num2;
         }
 
         // Divide
-        static T Divide<T>(T num1, T num2)
+        static double Divide(double num1, double num2)
         {
-            dynamic first = num1;
-            dynamic second = num2;
-
-            return first / second;
+            return num1 / num2;
         }
 
         // Modulo
-        static T Modulo<T>(T num1, T num2)
+        static double Modulo(double num1, double num2)
         {
-            dynamic first = num1;
-            dynamic second = num2;
-
-            return first % second;
+            return num1 % num2;
         }
 
         // Min
-        static T Min<T>(T num1, T num2)
+        static double Min(double num1, double num2)
         {
-            dynamic first = num1;
-            dynamic second = num2;
-
-            if (first < second)
+            if (num1 < num2)
             {
-                return first;
+                return num1;
             }
 
-            return second;
+            return num2;
         }
 
         // Max
-        static T Max<T>(T num1, T num2)
+        static double Max(double num1, double num2)
         {
-            dynamic first = num1;
-            dynamic second = num2;
 
-            if (first < second)
+            if (num1 < num2)
             {
-                return second;
+                return num2;
             }
 
-            return first;
+            return num1;
         }
 
         // ABS
-        static double abs(double num)
+        static double Abs(double num)
         {
+
             if (num < 0)
             {
                 return num + -(num * 2);
@@ -134,7 +115,7 @@ namespace csharp_calcolatrice
         static double pow(double num1, double num2)
         {
 
-           // to implement
+            // to implement
 
             return num1;
         }
