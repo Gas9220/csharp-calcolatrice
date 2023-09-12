@@ -13,20 +13,20 @@ do
 
     if (operation == "abs")
     {
-        double absNumber = CalculationHelpers.GetIntNumber("abs");
-        double result = CalculationHelpers.makeCalculation(absNumber, null, operation);
+        double absNumber = CalculationHelpers<Double>.GetIntNumber("abs");
+        double result = CalculationHelpers<Double>.makeCalculation(absNumber, null, operation);
         Console.WriteLine(result.ToTwoDigits());
     }
     else
     {
         // Get first number
-        double firstNumber = CalculationHelpers.GetIntNumber("First");
+        double firstNumber = CalculationHelpers<Double>.GetIntNumber("First");
 
         // Get second number;
-        double secondNumber = CalculationHelpers.GetIntNumber("Second");
+        double secondNumber = CalculationHelpers<Double>.GetIntNumber("Second");
 
         // Calculation
-        double result = CalculationHelpers.makeCalculation(firstNumber, secondNumber, operation);
+        double result = CalculationHelpers<Double>.makeCalculation(firstNumber, secondNumber, operation);
         Console.WriteLine(result.ToTwoDigits());
     }
 
