@@ -19,7 +19,7 @@ namespace csharp_calcolatrice
                 switch (operation)
                 {
                     case "+":
-                        return firstNumber + secondNumber.Value;
+                        return (firstNumber + secondNumber.Value);
                     case "-":
                         return firstNumber - secondNumber.Value;
                     case "*":
@@ -55,7 +55,7 @@ namespace csharp_calcolatrice
             {
                 Console.Write($"{numberDescription} number: ");
                 // check if is possible to convert the user input to a double
-                isNumber = Double.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture, out number);
+                isNumber = double.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture, out number);
             }
 
             return number;
