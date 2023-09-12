@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -47,9 +48,15 @@ namespace csharp_calcolatrice
         // Helper function
         public static double GetIntNumber(string numberDescription)
         {
-            double number;
-            Console.Write($"{numberDescription} number: ");
-            number = Convert.ToDouble(Console.ReadLine());
+            bool isNumber = false;
+            double number = 0;
+
+            while (!isNumber)
+            {
+                Console.Write($"{numberDescription} number: ");
+                // check if is possible to convert the user input to a double
+                isNumber = Double.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture, out number);
+            }
 
             return number;
         }

@@ -1,8 +1,7 @@
-﻿// Test int operations
-using csharp_calcolatrice;
+﻿using csharp_calcolatrice;
 
 // Welcome
-Console.WriteLine("Enter two numbers and an operation ( values accepted +, -, *, /, %, min, max, pow)");
+Console.WriteLine("Enter two numbers and an operation ( values accepted +, -, *, /, %, min, max, pow, abs)");
 
 // Get operation
 Console.Write("Operation: ");
