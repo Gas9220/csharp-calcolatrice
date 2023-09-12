@@ -9,30 +9,30 @@ namespace csharp_calcolatrice
 {
     internal sealed class CalculationHelpers
     {
-        public static int makeIntCalculation(int firstNumber, int? secondNumber, string operation)
+        public static double makeCalculation(double firstNumber, double? secondNumber, string operation)
         {
 
             // If user insert two numbers
-            if (secondNumber != null)
+            if (secondNumber.HasValue)
             {
                 switch (operation)
                 {
                     case "+":
-                        return firstNumber + (int)secondNumber;
+                        return firstNumber + secondNumber.Value;
                     case "-":
-                        return firstNumber - (int)secondNumber;
+                        return firstNumber - secondNumber.Value;
                     case "*":
-                        return firstNumber * (int)secondNumber;
+                        return firstNumber * secondNumber.Value;
                     case "/":
-                        return firstNumber / (int)secondNumber;
+                        return firstNumber / secondNumber.Value;
                     case "%":
-                        return firstNumber % (int)secondNumber;
+                        return firstNumber % secondNumber.Value;
                     case "min":
-                        return Math.Min(firstNumber, (int)secondNumber);
+                        return Math.Min(firstNumber, secondNumber.Value);
                     case "max":
-                        return Math.Max(firstNumber, (int)secondNumber);
+                        return Math.Max(firstNumber, secondNumber.Value);
                     case "pow":
-                        return (int)Math.Pow(firstNumber, (int)secondNumber);
+                        return (double)Math.Pow(firstNumber, secondNumber.Value);
                     default:
                         throw new Exception("Something goes wrong!");
                 }
@@ -45,11 +45,11 @@ namespace csharp_calcolatrice
         }
 
         // Helper function
-        public static int GetNumber(string numberDescription)
+        public static double GetIntNumber(string numberDescription)
         {
-            int number;
+            double number;
             Console.Write($"{numberDescription} number: ");
-            number = Convert.ToInt32(Console.ReadLine());
+            number = Convert.ToDouble(Console.ReadLine());
 
             return number;
         }

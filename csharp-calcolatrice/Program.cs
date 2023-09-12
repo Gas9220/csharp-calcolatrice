@@ -2,7 +2,7 @@
 using csharp_calcolatrice;
 
 // Welcome
-Console.WriteLine("Enter two numbers and an operation ( values accepted +, -, *, /, %, min, max, abs)");
+Console.WriteLine("Enter two numbers and an operation ( values accepted +, -, *, /, %, min, max)");
 
 // Get operation
 Console.Write("Operation: ");
@@ -10,20 +10,20 @@ string operation = Console.ReadLine().ToLower();
 
 if (operation == "abs")
 {
-    int absNumber = CalculationHelpers.GetNumber("abs");
-    int result = CalculationHelpers.makeIntCalculation(absNumber, null, operation);
+    double absNumber = CalculationHelpers.GetIntNumber("abs");
+    double result = CalculationHelpers.makeCalculation(absNumber, null, operation);
     Console.WriteLine(result);
 }
 else
 {
     // Get first number
-    int firstNumber = CalculationHelpers.GetNumber("First");
+    double firstNumber = CalculationHelpers.GetIntNumber("First");
 
     // Get second number;
-    int secondNumber = CalculationHelpers.GetNumber("Second");
+    double secondNumber = CalculationHelpers.GetIntNumber("Second");
 
     // Calculation
-    int result = CalculationHelpers.makeIntCalculation(firstNumber, secondNumber, operation);
+    double result = CalculationHelpers.makeCalculation(firstNumber, secondNumber, operation);
     Console.WriteLine(result);
 }
 
