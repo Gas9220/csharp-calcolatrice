@@ -2,7 +2,7 @@
 using csharp_calcolatrice;
 
 // Welcome
-Console.WriteLine("Enter two numbers and an operation ( values accepted +, -, *, /, %, min, max)");
+Console.WriteLine("Enter two numbers and an operation ( values accepted +, -, *, /, %, min, max, pow)");
 
 // Get operation
 Console.Write("Operation: ");
