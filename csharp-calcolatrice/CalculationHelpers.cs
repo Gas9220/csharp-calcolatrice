@@ -33,7 +33,7 @@ namespace csharp_calcolatrice
                     case "max":
                         return Max(firstNumber, secondNumber.Value);
                     case "pow":
-                        return (double)Math.Pow(firstNumber, secondNumber.Value);
+                        return Pow(firstNumber, secondNumber.Value);
                     default:
                         throw new Exception("Something goes wrong!");
                 }
@@ -112,14 +112,37 @@ namespace csharp_calcolatrice
         }
 
         // pow
-        static double pow(double num1, double num2)
+        static double Pow(double num1, double num2)
         {
 
-            // to implement
+            if (num1 == 0 || num2 == 0)
+            {
+                return 1;
+            }
+            else if (num1 < 0 || num2 < 0)
+            {
+                double accumulator = 1;
 
-            return num1;
+                for (int i = 0; i < num2; i++)
+                {
+                    accumulator = Multiply(num1, num1);
+                }
+
+                return 1 / accumulator;
+            }
+            else
+            {
+                Console.WriteLine("Sono qui");
+                double accumulator = 1;
+
+                for (int i = 0; i < num2; i++)
+                {
+                    accumulator = Multiply(num1, accumulator);
+                }
+
+                return accumulator;
+            }
         }
-
 
         // Helper function
         public static double GetIntNumber(string numberDescription)
