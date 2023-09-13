@@ -105,7 +105,7 @@ namespace csharp_calcolatrice
 
             if (num < 0)
             {
-                return num + -(num * 2);
+                return num *= -1;
             }
 
             return num;
