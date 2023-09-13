@@ -119,7 +119,7 @@ namespace csharp_calcolatrice
             {
                 return 1;
             }
-            else if (num1 < 0 || num2 < 0)
+            else if (num1 < 0)
             {
                 double accumulator = 1;
 
@@ -132,15 +132,25 @@ namespace csharp_calcolatrice
             }
             else
             {
-                Console.WriteLine("Sono qui");
                 double accumulator = 1;
 
-                for (int i = 0; i < num2; i++)
+                if (num2 < 0)
                 {
-                    accumulator = Multiply(num1, accumulator);
+                    for (int i = 0; i < Abs(num2); i++)
+                    {
+                        accumulator = Multiply(num1, accumulator);
+                    }
+                    return 1 / accumulator;
+                }
+                else
+                {
+                    for (int i = 0; i < num2; i++)
+                    {
+                        accumulator = Multiply(num1, accumulator);
+                    }
+                    return accumulator;
                 }
 
-                return accumulator;
             }
         }
 
