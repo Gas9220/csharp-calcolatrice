@@ -125,7 +125,7 @@ namespace csharp_calcolatrice
 
                 for (int i = 0; i < num2; i++)
                 {
-                    accumulator = Multiply(num1, num1);
+                    accumulator = Multiply(num1, accumulator);
                 }
 
                 return 1 / accumulator;
